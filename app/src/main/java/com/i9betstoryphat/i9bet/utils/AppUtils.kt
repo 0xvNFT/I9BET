@@ -1,0 +1,18 @@
+package com.i9betstoryphat.i9bet.utils
+
+import com.i9betstoryphat.i9bet.data.LoginPhone
+import com.orhanobut.hawk.Hawk
+
+object AppUtils {
+
+    private const val login = "LOGIN_PHONE"
+
+    fun saveLogin(item: LoginPhone) {
+        Hawk.put(login, item)
+    }
+
+    fun getLogin(): LoginPhone? {
+        return Hawk.get(login)
+    }
+
+}
