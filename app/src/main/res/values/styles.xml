@@ -4,4 +4,11 @@
         <item name="colorAccent">@color/colorPrimaryHint</item>
     </style>
 
+    <style name="ShapeAppearanceOverlay.App.Card.Media" parent="">
+        <item name="cornerSizeBottomLeft">30dp</item>
+        <item name="cornerSizeBottomRight">30dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+    </style>
+
 </resources>

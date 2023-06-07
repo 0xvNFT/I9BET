@@ -4,9 +4,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.i9betstoryphat.i9bet.databinding.ActivityMainBinding
-import com.i9betstoryphat.i9bet.ui.dashboard.DashboardFragment
 import com.i9betstoryphat.i9bet.ui.home.HomeFragment
-import com.i9betstoryphat.i9bet.ui.notifications.NotificationsFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(){
 
@@ -16,8 +14,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(){
     override fun initView() {
         super.initView()
         val home = HomeFragment()
-        val dashBoard = DashboardFragment()
-        val noti = NotificationsFragment()
+        val dashBoard = HomeFragment()
+        val noti = HomeFragment()
         fragmentManager = supportFragmentManager
         val navView = binding.navView
         navView.selectedItemId = R.id.navigation_home

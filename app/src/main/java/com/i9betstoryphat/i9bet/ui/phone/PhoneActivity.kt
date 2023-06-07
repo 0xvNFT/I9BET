@@ -15,6 +15,7 @@ import com.i9betstoryphat.i9bet.R
 import com.i9betstoryphat.i9bet.data.HttpRequest
 import com.i9betstoryphat.i9bet.data.LoginPhone
 import com.i9betstoryphat.i9bet.databinding.ActivityPhoneBinding
+import com.i9betstoryphat.i9bet.ui.ParentActivity
 import com.i9betstoryphat.i9bet.utils.AppUtils
 import org.json.JSONException
 import org.json.JSONObject
@@ -106,7 +107,7 @@ class PhoneActivity : BaseActivity<ActivityPhoneBinding>() {
 
         override fun onPostExecute(result: String) {
             super.onPostExecute(result)
-            startActivity(Intent(phoneActivity, MainActivity::class.java))
+            startActivity(Intent(phoneActivity, ParentActivity::class.java))
         }
 
 

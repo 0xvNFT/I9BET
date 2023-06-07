@@ -1,4 +1,4 @@
-package com.i9betstoryphat.i9bet.ui.adapter
+package com.i9betstoryphat.i9bet.ui.comic
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.i9betstoryphat.i9bet.base.BaseRecyclerViewViewHolder
 import com.i9betstoryphat.i9bet.data.Content
 import com.i9betstoryphat.i9bet.databinding.ItemContentHomeBinding
 
-class ContentAdapter : BaseMainAdapter<Content>() {
+class ComicAdapter : BaseMainAdapter<Content>() {
 
     var click:((Content) -> Unit)? = null
     override fun onCreateHolder(view: ViewGroup): BaseRecyclerViewViewHolder<Content> {
@@ -18,15 +18,19 @@ class ContentAdapter : BaseMainAdapter<Content>() {
                 val item = mList[adapterPosition]
                 click?.invoke(item)
             }
+
             itemView.findViewById<ImageView>(R.id.image).setOnClickListener {
                 val item = mList[adapterPosition]
                 click?.invoke(item)
             }
+
         }
     }
 
     class Item(val binding: ItemContentHomeBinding) :
         BaseRecyclerViewViewHolder<Content>(binding.root) {
+
+       var bindingTest: ItemContentHomeBinding = binding
 
         override fun bind(item: Content) {
             item.path?.let { binding.image.setImageResource(it) }

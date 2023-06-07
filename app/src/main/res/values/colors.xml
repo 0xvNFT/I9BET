@@ -7,10 +7,22 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_no_color">#00000000</color>
+
     <color name="colorFilterGray">#ADADAD</color>
     <color name="colorPrimaryHint">#73B41E8E</color>
 
     <color name="color_detail_content">#868AAF</color>
     <color name="color_text_more">#AE43F6</color>
+
+    <color name="color_detail_view_content">#060A2C</color>
+
+    <color name="color_detail_content_comic">#858585</color>
+
+    <color name="color_organ">#FF7A00</color>
+
+    <color name="color_viewer">#555869</color>
+
+    <color name="color_text_home">#060A2C</color>
 
 </resources>
