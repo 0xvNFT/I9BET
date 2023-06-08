@@ -32,12 +32,13 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/baseline_search_24"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/layoutSearch">
@@ -85,6 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/layoutBanner">
 
                 <LinearLayout
+                    android:id="@+id/layoutRank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -110,6 +112,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutNew"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -135,6 +138,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutBook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -160,6 +164,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/layoutUser"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -227,19 +232,13 @@
 
                 </LinearLayout>
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rclMain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        android:orientation="horizontal"
-                        tools:listitem="@layout/item_content_home" />
-
-                </HorizontalScrollView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rclMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_content_home" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -276,24 +275,18 @@
 
                 </LinearLayout>
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rclComic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        android:orientation="horizontal"
-                        tools:listitem="@layout/item_content_home" />
-
-                </HorizontalScrollView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rclComic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_content_home" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
 </LinearLayout>

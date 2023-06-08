@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.i9betstoryphat.i9bet.databinding.ActivityMainBinding
 import com.i9betstoryphat.i9bet.ui.home.HomeFragment
+import com.i9betstoryphat.i9bet.ui.love.LoveFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(){
 
@@ -15,7 +16,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(){
         super.initView()
         val home = HomeFragment()
         val dashBoard = HomeFragment()
-        val noti = HomeFragment()
+        val noti = LoveFragment()
         fragmentManager = supportFragmentManager
         val navView = binding.navView
         navView.selectedItemId = R.id.navigation_home

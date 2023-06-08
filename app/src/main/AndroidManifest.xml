@@ -36,6 +36,11 @@
         <activity android:name="com.i9betstoryphat.i9bet.ui.ParentActivity" />
         <activity android:name="com.i9betstoryphat.i9bet.ui.comic.ComicDetailActivity" />
         <activity android:name="com.i9betstoryphat.i9bet.ui.read.ReadContentActivity" />
+        <activity android:name="com.i9betstoryphat.i9bet.ui.rank.RankActivity" />
+        <activity android:name="com.i9betstoryphat.i9bet.ui.love.BookActivity" />
+        <activity android:name="com.i9betstoryphat.i9bet.ui.account.AccountActivity" />
+        <activity android:name="com.i9betstoryphat.i9bet.ui.content.NewActivity" />
+
     </application>
 
 </manifest>

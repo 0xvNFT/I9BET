@@ -7,25 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.i9betstoryphat.i9bet.R
 import com.i9betstoryphat.i9bet.customview.PagerScroll
 import com.i9betstoryphat.i9bet.data.Banner
 import com.i9betstoryphat.i9bet.data.Content
 import com.i9betstoryphat.i9bet.databinding.FragmentHomeBinding
+import com.i9betstoryphat.i9bet.ui.account.AccountActivity
 import com.i9betstoryphat.i9bet.ui.adapter.ContentAdapter
 import com.i9betstoryphat.i9bet.ui.banner.BannerAdapter
 import com.i9betstoryphat.i9bet.ui.comic.ComicDetailActivity
 import com.i9betstoryphat.i9bet.ui.content.ContentDetailActivity
+import com.i9betstoryphat.i9bet.ui.content.NewActivity
+import com.i9betstoryphat.i9bet.ui.love.BookActivity
+import com.i9betstoryphat.i9bet.ui.rank.RankActivity
 import com.i9betstoryphat.i9bet.utils.AppCache
 import com.matthewtamlin.sliding_intro_screen_library.indicators.DotIndicator
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var pagerBanner: BannerAdapter
@@ -71,23 +71,40 @@ class HomeFragment : Fragment() {
         binding.layoutBanner
         adapterContent.clear()
         binding.rclMain.adapter = adapterContent
-        binding.rclMain.layoutManager =
-            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
+
         val listContent = AppCache.getListContent()
         adapterContent.addAll(listContent)
         adapterComic = ContentAdapter()
         adapterComic.clear()
         adapterComic.addAll(listContent)
         binding.rclComic.adapter = adapterComic
-        binding.rclComic.layoutManager =
-            LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
     }
 
     private fun setAction() {
+        binding.layoutUser.setOnClickListener {
+            startActivity(Intent(requireActivity(), AccountActivity::class.java))
+        }
+
+        binding.layoutRank.setOnClickListener {
+            startActivity(Intent(requireActivity(), RankActivity::class.java))
+        }
+
+        binding.layoutNew.setOnClickListener {
+            contentCurrent = AppCache.getListContent().get(0)
+            startActivity(Intent(requireActivity(), NewActivity::class.java))
+        }
+
+        binding.layoutBook.setOnClickListener {
+            contentCurrent = AppCache.getListContent().get(0)
+            startActivity(Intent(requireActivity(), BookActivity::class.java))
+        }
+
         binding.texMoreNovel.setOnClickListener {
+            contentCurrent = AppCache.getListContent().get(0)
             startActivity(Intent(requireActivity(), ContentDetailActivity::class.java))
         }
         binding.textMoreComic.setOnClickListener {
+            contentCurrent = AppCache.getListContent().get(0)
             startActivity(Intent(requireActivity(), ContentDetailActivity::class.java))
         }
 

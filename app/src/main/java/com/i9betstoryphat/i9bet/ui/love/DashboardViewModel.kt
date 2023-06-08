@@ -1,4 +1,4 @@
-package com.i9betstoryphat.i9bet.ui.dashboard
+package com.i9betstoryphat.i9bet.ui.love
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
